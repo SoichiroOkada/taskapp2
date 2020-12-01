@@ -13,10 +13,13 @@ import UserNotifications    // 追加
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 @IBOutlet weak var tableView: UITableView!
+@IBOutlet weak var searchTextField: UITextField!
     
     // Realmインスタンスを取得する
     let realm = try! Realm()  // ←追加
+    
 
+       
     // DB内のタスクが格納されるリスト。
     // 日付の近い順でソート：昇順
     // 以降内容をアップデートするとリスト内は自動的に更新される。
@@ -27,6 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
     tableView.delegate = self
     tableView.dataSource = self
+        
+        // Query using a predicate string 文字列で検索条件を指定します
+        var tanTasks = realm.objects(Task.self).filter("category = 'UISearchTextField.text'")
+
+//        // Query using an NSPredicate NSPredicateを使って検索条件を指定します
+//        let predicate = NSPredicate(format: )
+//        tanTasks = realm.objects(Task.self).filter(UISearchTextField)
+        
     }
     // データの数（＝セルの数）を返すメソッド
       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +63,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           return cell
       }
 
+   
+    
       // 各セルを選択した時に実行されるメソッド
       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          performSegue(withIdentifier: "cellSegue",sender: nil)

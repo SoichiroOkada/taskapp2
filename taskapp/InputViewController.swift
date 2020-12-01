@@ -14,6 +14,7 @@ import UserNotifications    // 追加
 class InputViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -57,6 +58,11 @@ class InputViewController: UIViewController {
             content.title = "(タイトルなし)"
         } else {
             content.title = task.title
+        }
+        if task.category == "" {
+            content.title = "(タイトルなし)"
+        } else {
+            content.title = task.category
         }
         if task.contents == "" {
             content.body = "(内容なし)"
