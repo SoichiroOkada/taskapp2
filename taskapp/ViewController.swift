@@ -11,6 +11,7 @@ import RealmSwift   // ←追加
 import UserNotifications    // 追加
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
 @IBOutlet weak var tableView: UITableView!
     
     // Realmインスタンスを取得する
@@ -34,7 +35,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
       // 各セルの内容を返すメソッド
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        performSegue(withIdentifier: "cellSegue",sender: nil) // ←追加する
           // 再利用可能な cell を得る
           let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         // Cellに値を設定する.  --- ここから ---
