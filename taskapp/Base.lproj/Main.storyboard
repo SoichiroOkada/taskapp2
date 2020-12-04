@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yiQ-Gr-prt">
-                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="V99-9O-9TE" detailTextLabel="Cul-dj-bQj" style="IBUITableViewCellStyleSubtitle" id="H3w-UY-ctj">
@@ -45,24 +45,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y6o-jw-XXk">
-                                <rect key="frame" x="5" y="98" width="404" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="sFe-Mk-A5M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Oql-81-Gml">
+                                <rect key="frame" x="0.0" y="93" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Y6o-jw-XXk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3nc-0m-qXq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y6o-jw-XXk" secondAttribute="trailing" constant="5" id="Lg4-w1-B2d"/>
-                            <constraint firstItem="Y6o-jw-XXk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="NOx-cY-rQT"/>
+                            <constraint firstItem="Oql-81-Gml" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BHY-wi-gvV"/>
+                            <constraint firstItem="yiQ-Gr-prt" firstAttribute="top" secondItem="Oql-81-Gml" secondAttribute="bottom" constant="5" id="BOH-3o-cZV"/>
+                            <constraint firstItem="Oql-81-Gml" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LFD-SL-ipt"/>
+                            <constraint firstItem="Oql-81-Gml" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="Ybj-Cr-ter"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yiQ-Gr-prt" secondAttribute="trailing" id="YqM-Aw-s02"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yiQ-Gr-prt" secondAttribute="bottom" id="eEP-J5-n94"/>
                             <constraint firstItem="yiQ-Gr-prt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fQa-vv-GCh"/>
-                            <constraint firstItem="yiQ-Gr-prt" firstAttribute="top" secondItem="Y6o-jw-XXk" secondAttribute="bottom" constant="50" id="y3h-JX-3g4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,7 +70,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchTextField" destination="Y6o-jw-XXk" id="eYJ-UR-uIc"/>
+                        <outlet property="searchBar" destination="Oql-81-Gml" id="rdl-PG-4cF"/>
                         <outlet property="tableView" destination="yiQ-Gr-prt" id="QIn-DF-xqZ"/>
                         <segue destination="MPV-fl-WRY" kind="show" identifier="cellSegue" id="bSX-Yn-ix8"/>
                     </connections>
